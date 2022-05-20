@@ -2,19 +2,19 @@
 
 使用物理信息神经网络(Physics Informed Neural Networks, PINNs)解微分方程。
 
-![数学领域](assets\数学领域.png)
+![数学领域](assets/数学领域.png)
 
 
 
 
 
-![微分方程求解方法](assets\微分方程求解方法.png)
+![微分方程求解方法](assets/微分方程求解方法.png)
 
-![PINN](assets\PINN.png)
+![PINN](assets/PINN.png)
 
 
 
-![NN对比PINN](assets\NN对比PINN.png)
+![NN对比PINN](assets/NN对比PINN.png)
 
 ### Notebook
 
