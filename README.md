@@ -10,6 +10,10 @@
 
 ![微分方程求解方法](assets/微分方程求解方法.png)
 
+![神经网络的发展](assets/神经网络的发展.png)
+
+
+
 ![PINN](assets/PINN.png)
 
 
