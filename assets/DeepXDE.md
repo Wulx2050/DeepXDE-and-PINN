@@ -1,3 +1,51 @@
+# PINN
+
+
+
+使用PINN算法解微分方程的一般步骤:
+Step 1 构造一个输入为 $\mathscr{x}$，参数为 $\mathscr{\theta}$ 的神经网络 $\hat{u}(\mathscr{x};\mathscr{\theta})$。
+Step 2 为微分方程、边界/初始条件指定两个训练集 $\mathscr{T}_{f}$ 和 $\mathscr{T}_{b}$。(有时候，还需要额外的观察点数据集 $\mathscr{T}_{d}$，比如在求微分方程参数的逆问题中)
+Step 3 通过对微分方程和边界条件残差(同样还有观察点数据集的残差)的加权 $L^2$ 范数求和来指定损失函数 $\mathscr{L}(\mathscr{\theta}, \mathscr{T})$。
+Step 4 指定优化算法、学习率、迭代轮数、残差的权重系数，通过最小化损失函数 $\mathscr{L}(\mathscr{\theta}, \mathscr{T})$ 来训练神经网络以找到最佳参数  $\theta^*$。
+
+
+
+使用DeepXDE求解微分方程的步骤：
+
+Step 1 使用几何模块指定计算域。
+Step 2 按照DeepXDE后端的深度学习框架，使用TensorFlow、PyTorch等的语法指定微分方程。
+Step 3 指定边界和初始条件。
+Step 4 将几何、偏微分方程和边界/初始条件一起组合到 data.PDE 或 data.TimePDE 中，分别用于时间无关问题或时间相关问题。要指定训练数据，可以设置特定的点位置，或者只设置点的数量，然后 DeepXDE将在网格上或随机采样所需数量的点。
+Step 5 使用maps模块构建神经网络。
+Step 6 通过结合第 4 步中的 PDE 问题和第 5 步中的神经网络来定义模型。
+Step 7 调用Model.compile设置优化超参数，例如优化器、学习率和损失权重。
+Step 8 调用Model.train从随机初始化或使用参数模型恢复路径的预训练模型训练网络。使用回调来监控和修改训练行为非常灵活。
+Step 9 调用Model.predict预测不同位置的PDE解。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # DeepXDE
 
 [DeepXDE](https://github.com/lululxvi/deepxde)是一个用于科学机器学习的库。深度学习库DeepXDE可以
